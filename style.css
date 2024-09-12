@@ -8,23 +8,36 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vh;
     background: black;
 }
 
+.container {
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0px 40px;
+  }
+
 .slider-wrapper{
-    position: relative;
     margin: 0 auto;
 }
 
 .sliders{
-    position: absolute;
     width: 900px;
-    height: 400px;
+    height: 700px;
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     border-radius: 20px;
     border: 2px solid #fff;
+}
+
+.sliders::-webkit-scrollbar{
+    display:none;
+}
+.sliders img{
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+   
 }
