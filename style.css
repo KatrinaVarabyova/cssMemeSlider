@@ -1,6 +1,7 @@
 .container{
     max-width: 1024px;
     margin: 0 auto;
+    padding: 5rem;
 }
 
 .slider-wrapper{
@@ -11,24 +12,28 @@
 .sliders{
     display: flex;
     aspect-ratio: 16 / 9;
-    overflow-x: auto;
+    overflow-x: hidden;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     border-radius: 0.5rem;
 }
 
-.sliders img{
+.card{
     flex: 1 0 100%;
     scroll-snap-align: start;
+}
+
+.card__thumb img{
+    width: 40rem;
+    height: 30rem;
 }
 
 .slider-nav{
     display: flex;
     column-gap: 1.5rem;
-    position: absolute;
     bottom: 11rem;
     left: 50%;
-    transform: translateX(40%);
+    transform: translateX(75%);
     z-index: 1;
 }
  .slider-nav a{
@@ -40,11 +45,33 @@
     transition: background-color 0.3s ease-in-out;
  }
 
+
   a:hover{
- background-color: aqua;
+    border: 3px dotted #3a7999;
+	color: #3a7999;
+	background: rgba(0,0,0,0);
  }
- a:active{
-    background-color: black;
+  a:active{
+    background: black;
  }
  
- 
+ .card {
+    display: grid;
+}
+
+.card__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+p{
+    font-size: 1rem;
+    color: azure;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(110, 104, 224);
+}
+.card__thumb,
+.card__content {
+    grid-area: 1/2;
+}
